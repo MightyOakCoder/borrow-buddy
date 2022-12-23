@@ -1,8 +1,7 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
-mongoose.set("strictQuery", false)
+mongoose.connect('mongodb://127.0.0.1:27017/movies');
 
-mongoose.connect(process.env.DATABASE_URL);
 
 const db = mongoose.connection
 

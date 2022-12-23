@@ -1,9 +1,14 @@
-const express = require("express");
-const router = express.Router();
-const itemsCtrl = require("../controllers/items");
-const isLoggedIn = require("../config/auth")
+var express = require('express');
+var router = express.Router();
+const itemsCtrl = require("../controllers/items")
 
-// GET /items/new
+router.get("/", itemsCtrl.index);
+/* GET users listing. */
 router.get("/new", itemsCtrl.new);
+
+router.get("/:id", itemsCtrl.show);
+
+// POST /items
+router.post("/", itemsCtrl.create)
 
 module.exports = router;
