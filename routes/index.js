@@ -4,7 +4,7 @@ var passport = require("passport");
 
 
 router.get('/', function(req, res, next) {
-  res.redirect("/items/new");
+  res.redirect("/items");
 });
 
 router.get("/auth/google", passport.authenticate(

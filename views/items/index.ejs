@@ -1,7 +1,6 @@
 <%- include('../partials/header') %>
 
-  <h1>Item Inventory List</h1>
-  <table>
+  <table id="list">
     <thead>
       <tr>
         <th>Item</th>
@@ -16,10 +15,11 @@
           <td><%= i.item %></td>
           <td><%= i.brand %></td>
           <td><%= i.owner %></td>
-          <td><a href="/items/<%= i._id %>">DETAILS</a></td>         
-        </tr>
-      <!-- Close the forEach using EJS here -->
+        </td>
+        <td><a href="/items/<%= i._id %>">DETAILS</a></td>
+      </tr>
       <% }); %>
+      <!-- Close the forEach using EJS here -->
     </tbody>
   </table>
 

@@ -9,7 +9,7 @@ module.exports = {
 
 function index(req, res) {
     Item.find({}, function (err, items) {
-        res.render('items/index', { title: 'All Items', items })
+        res.render('items/index', { title: 'Item Inventory List', items })
     })
 }
 
@@ -26,8 +26,7 @@ function newItem(req, res) {
 function create(req, res) {
     const item = new Item(req.body);
     item.save(function(err) {
-        if (err) return res.render("items/new");
-        console.log(item);
-        res.redirect("/items");
+        if (err) return res.redirect("items/new");
+        res.redirect(`/items/${item._id}`);
     });
 }
