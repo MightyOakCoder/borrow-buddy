@@ -9,7 +9,7 @@ module.exports = {
 
 function index(req, res) {
     Item.find({}, function (err, items) {
-        res.render('items/index', { title: 'All items', items })
+        res.render('items/index', { title: 'All Items', items })
     })
 }
 
@@ -20,7 +20,7 @@ function show(req, res) {
   }
 
 function newItem(req, res) {
-    res.render("items/new");
+    res.render("items/new", { title: "Add Item" });
 };
 
 function create(req, res) {

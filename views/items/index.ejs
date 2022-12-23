@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-  <title>Borrow bBuddy</title>
-</head>
-<body>
+<%- include('../partials/header') %>
+
   <h1>Item Inventory List</h1>
   <table>
     <thead>
@@ -24,11 +16,11 @@
           <td><%= i.item %></td>
           <td><%= i.brand %></td>
           <td><%= i.owner %></td>
-          <td><a href="/items/<%i._id %>">DETAILS</a></td>         
+          <td><a href="/items/<%= i._id %>">DETAILS</a></td>         
         </tr>
       <!-- Close the forEach using EJS here -->
       <% }); %>
     </tbody>
   </table>
-</body>
-</html>
+
+  <%- include('../partials/footer') %>

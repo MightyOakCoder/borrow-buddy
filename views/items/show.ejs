@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Show</title>
-</head>
-<body>
+<%- include('../partials/header') %>
+
     <section id="show-page">
+        <div>
+            <img src="/images/orbital sander.png" id="image" width="100px" height="auto">
+        </div><br>
         <div>Item: </div>
         <div><%= item.item %></div>
         <div>Brand: </div>
@@ -15,5 +11,5 @@
         <div>Owner: </div>
         <div><%= item.owner %></div>
     </section>
-</body>
-</html>
+
+    <%- include('../partials/footer') %>
