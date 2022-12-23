@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 // opitonal shortcut to the mongoose.Schema class
 const Schema = mongoose.Schema
 
-const reviewSchema = new Schema({
+const commentSchema = new Schema({
     comments: String,
     user: {type: Schema.Types.ObjectId, ref: 'User'},
 },
@@ -25,4 +25,4 @@ const itemSchema = new Schema({
 })
 
 // Compile the schema into a model and export it
-module.exports = mongoose.model('Movie', movieSchema)
+module.exports = mongoose.model('Item', itemSchema)
