@@ -3,25 +3,17 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const commentSchema = new Schema({
-    comments: String,
+    content: String,
+    condition: String,
     user: {type: Schema.Types.ObjectId, ref: 'User'},
+    userAvatar: String,
+    userName: String
 },
 {
     timestamps: true
 })
 
-const imageSchema = new Schema ({
-    name: String,
-    desc: String,
-    img:
-    {
-        data: Buffer,
-        contentType: String
-    }
-});
-
 const itemSchema = new Schema({
-    image: [imageSchema],
     item: String,
     brand: String,
     category: String,

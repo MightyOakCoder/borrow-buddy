@@ -16,7 +16,7 @@ body {
 
 body > nav {
   grid-area: nav;
-  background-color: #B8C0C2;
+  background-color: #ffffff;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -24,7 +24,7 @@ body > nav {
 }
 
 nav > img {
-  width: 34px;
+  width: 100px;
   object-fit: contain;
   margin-right: auto;
 }
@@ -60,14 +60,15 @@ nav > a.active {
   cursor: default;
 }
 
-#new-form {
+#new-form *, #add-comment-form * {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(2, minmax(auto, 22rem));
+  grid-template-columns: repeat(2, minmax(auto, 2rem));
 }
 
-#new-form * {
-  font-size: 20px;
+form *,
+.dropdown {
+  font-size: 12px;
   padding: 5px;
   border-radius: 5px;
 }
@@ -79,7 +80,7 @@ nav > a.active {
 }
 
 table {
-  font-size: 20px;
+  font-size: 14px;
 }
 
 table thead th {
@@ -118,6 +119,50 @@ table td {
   font-weight: bold;
 }
 
+#add-comment-form {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+#add-comment-form input[type="submit"] {
+  width: 10rem;
+  grid-column: 2 / 3;
+}
+
+ul {
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+	
+li {
+  font-weight: bold;
+}
+
+hr {
+  color: #424748
+}
+
+#badge-container {
+  display: flex;
+  /* padding: 1rem; */
+  width: 80%;
+  border: 2px solid #B8C0C2;
+  border-radius: .5rem;
+  margin: .5rem 0 2rem;
+}
+
+.badge {
+  background-color: #B8C0C2;
+  padding: .5rem;
+  margin: 1rem;
+  border-radius: .3rem;
+  font-size: .8rem;
+  text-align: center;
+}
+
 .login {
   display: flex;
   justify-content: center;
@@ -127,4 +172,15 @@ table td {
 
 .login img {
   height: 30px;
+}
+
+.comment-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment-user img {
+  border-radius: 50%;
+  height: 40px;
 }

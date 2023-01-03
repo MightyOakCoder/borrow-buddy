@@ -30,7 +30,10 @@ function newItem(req, res) {
 
 function create(req, res) {
     const item = new Item(req.body);
-    item.userAdding = req.user._id;
+    for (let key in req.body) {
+        if (req.body[key] === "") delete req.body[key];
+    }
+        item.userAdding = req.user._id;
     item.save(function(err) {
         if (err) return res.redirect("items/new");
         res.redirect(`/items/${item._id}`);
