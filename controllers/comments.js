@@ -1,10 +1,10 @@
 const Item = require("../models/item");
 
 module.exports = {
-    create,
-    delete: deleteComment,
     edit,
-    update
+    update,
+    create,
+    delete: deleteComment
 }
 
 function deleteComment(req, res, next) {
