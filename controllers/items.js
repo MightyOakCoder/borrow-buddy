@@ -1,4 +1,5 @@
 const Item = require("../models/item");
+const Image = require("../models/item");
 
 module.exports = {
     index,

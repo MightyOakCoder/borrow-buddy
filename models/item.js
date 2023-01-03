@@ -10,7 +10,18 @@ const commentSchema = new Schema({
     timestamps: true
 })
 
+const imageSchema = new Schema ({
+    name: String,
+    desc: String,
+    img:
+    {
+        data: Buffer,
+        contentType: String
+    }
+});
+
 const itemSchema = new Schema({
+    image: [imageSchema],
     item: String,
     brand: String,
     category: String,
@@ -22,4 +33,4 @@ const itemSchema = new Schema({
 })
 
 // Compile the schema into a model and export it
-module.exports = mongoose.model('Item', itemSchema)
+module.exports = mongoose.model('Item', itemSchema);
