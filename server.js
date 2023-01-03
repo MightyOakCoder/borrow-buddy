@@ -18,6 +18,7 @@ require("./config/passport");
 
 var indexRouter = require('./routes/index');
 var itemsRouter = require('./routes/items');
+var commentsRouter = require("./routes/comments");
 
 var app = express();
 
@@ -66,6 +67,7 @@ var imgModel = require("./models/item");
 
 app.use('/', indexRouter);
 app.use('/items', itemsRouter);
+app.use("/", commentsRouter);
 
 // the GET request handler that provides the HTML UI
 

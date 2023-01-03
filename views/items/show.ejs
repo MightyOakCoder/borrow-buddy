@@ -1,11 +1,8 @@
 <%- include('../partials/header') %>
 
     <section id="show-page">
-        <div>
-            <img src="/images/orbital sander.png" id="image" width="100px" height="auto">
-            <div> <%- item.img %>
-            
-            </div>
+        <div> 
+            <%- item.img %>
         </div><br>
         <div>Item: </div>
         <div>
@@ -21,4 +18,36 @@
         </div>
     </section>
 
-    <%- include('../partials/footer') %>
+    <br><br>
+    <h2>Comments</h2>
+    <p>Add helpful comments and tips here:</p>
+    <form id="add-comment-form" method="POST" action="/items/<%= item._id %>/comments">
+        <textarea name="content"></textarea>
+        <button type="submit">ADD COMMENT</button>
+    </form>
+    
+    <% if (item.comments.length) { %>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Comment</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% item.comments.forEach(function(c) { %>
+                    <tr>
+                        <td>
+                            <%= c.createdAt.toLocaleDateString() %>
+                        </td>
+                        <td>
+                            <%= c.content %>
+                        </td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+        <% } else { %>
+            <h5>No Comments Yet</h5>
+            <% } %>
+                <%- include('../partials/footer') %>
