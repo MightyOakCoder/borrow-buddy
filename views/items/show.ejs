@@ -64,8 +64,8 @@
                                         <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
                                             <button type="submit">X</button>
                                         </form>
-                                        <form action="/comments/<%= c._id %>?_method=PUT" method="POST">
-                                            <input name="text" value="<%= c.text %>">
+                                        <form action="/comments/<%= c._id %>?_method=PUT" method="POST" autocomplete="off">
+                                            <input type="text" name="update" value="<%= c.text %>">
                                             <button type="submit">UPDATE COMMENT</button>
                                         </form>
                                         <% } %>

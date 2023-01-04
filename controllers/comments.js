@@ -72,3 +72,15 @@ function create(req, res) {
       });
     });
   }
+
+//   function edit(req,res) {
+//     res.render("todos/edit", {todo: Todo.getOne(req.params.id)})
+// }
+
+// function update(req, res) {
+//     // Need to handle the scenario where checkbox is checked
+//     req.body.done = req.body.done === "on"
+//     Todo.update(req.params.id, req.body)
+//     res.redirect("/todos")
+// }
+

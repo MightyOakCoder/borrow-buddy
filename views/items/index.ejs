@@ -1,26 +1,23 @@
 <%- include('../partials/header') %>
 
-  <table id="list">
-    <thead>
-      <tr>
-        <th>Item</th>
-        <th>Brand</th>
-        <th>Owner</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Write the line of EJS to iterate over movies using forEach -->
-      <% items.forEach(function(i) { %>
-        <tr>
-          <td><%= i.item %></td>
-          <td><%= i.brand %></td>
-          <td><%= i.owner %></td>
-        </td>
-        <td><a href="/items/<%= i._id %>">DETAILS</a></td>
-      </tr>
-      <% }); %>
-      <!-- Close the forEach using EJS here -->
-    </tbody>
-  </table>
+<table id="list">
+  <thead>
+  <tr>
+   <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->  
+    <th onclick="sortTable(0)">Item</th>
+    <th onclick="sortTable(1)">Brand</th>
+    <th onclick="sortTable(2)">Owner</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% items.forEach(function(i) { %>
+  <tr>
+    <td><a href="/items/<%= i._id %>"><%= i.item %></a></td>
+    <td><%= i.brand %></td>
+    <td><%= i.owner %></td>
+  </tr>
+  <% }); %>
+</tbody>
+</table>
 
   <%- include('../partials/footer') %>
