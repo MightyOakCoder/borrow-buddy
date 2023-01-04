@@ -1,15 +1,19 @@
 <%- include('../partials/header') %>
 
-<table id="list">
-  <thead>
-  <tr>
-   <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->  
-    <th onclick="sortTable(0)">Category</th>
-    <th onclick="sortTable(1)">Item</th>
-    <th onclick="sortTable(2)">Brand</th>
-    <th onclick="sortTable(3)">Owner</th>
-  </tr>
-  </thead>
+<h1>AVAILABLE ITEMS</h1>
+<div class="tbl-header">
+  <table id="list" cellpadding="0" cellspacing="0" border="0">
+    <thead>
+      <tr>
+        <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->
+        <th onclick="sortTable(0)">Category</th>
+        <th onclick="sortTable(1)">Item</th>
+        <th onclick="sortTable(2)">Brand</th>
+        <th onclick="sortTable(3)">Owner</th>
+      </tr>
+    </thead>
+  </table>
+</div>
   <tbody>
   <% items.forEach(function(i) { %>
   <tr>

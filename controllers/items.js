@@ -4,6 +4,7 @@ const Image = require("../models/item");
 module.exports = {
     index,
     show,
+    allItems, 
     new: newItem,
     create,
     deleteItem, 
@@ -21,6 +22,18 @@ function index(req, res) {
 function show(req, res) {
     Item.findById(req.params.id, function(err, item) {
       res.render('items/show', { title: 'Item Detail', item });
+    });
+  }
+
+function allItems(req, res) {
+    let itemQuery = req.query.name ? {name: new RegExp(req.query.name, 'i')} : {};
+    Item.find(itemQuery, function(err, items) {
+      // Why not reuse the books/index template?
+      res.render('items/index', {
+        items,
+        user: req.user,  // should use middleware instead (see below)
+        nameSearch: req.query.name  // use to set content of search form
+      });
     });
   }
 

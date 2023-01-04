@@ -19,6 +19,8 @@ const itemSchema = new Schema({
     category: String,
     owner: String,
     dueDate: Date,
+    userBorrowing: String,
+    
     comments: [commentSchema]
 }, {
     timestamps: true

@@ -56,31 +56,15 @@ function create(req, res) {
   }
 
   function update(req, res) {
-    // Note the cool "dot" syntax to query on the property of a subdoc
-    Item.findOne({'comments._id': req.params.id}, function(err, item) {
-      // Find the comment subdoc using the id method on Mongoose arrays
-      // https://mongoosejs.com/docs/subdocs.html
-      const commentSubdoc = item.comments.id(req.params.id);
-      // Ensure that the comment was created by the logged in user
-      if (!commentSubdoc.userId.equals(req.user._id)) return res.redirect(`/items/${item._id}`);
-      // Update the text of the comment
-      commentSubdoc.text = req.body.text;
-      // Save the updated book
-      item.save(function(err) {
-        // Redirect back to the book's show view
-        res.redirect(`/items/${item._id}`);
-      });
-    });
+    Item.findOne(
+      {"comments._id": req.params.id, "comments.user": req.user._id},
+      function(err, item) {
+        item.comments.id(req.params.id).set(req.body);
+        item.save(function() {
+            if (err) return res.redirect('/items');
+            res.redirect(`/items/${item._id}`);
+        })
+      }
+    );
   }
-
-//   function edit(req,res) {
-//     res.render("todos/edit", {todo: Todo.getOne(req.params.id)})
-// }
-
-// function update(req, res) {
-//     // Need to handle the scenario where checkbox is checked
-//     req.body.done = req.body.done === "on"
-//     Todo.update(req.params.id, req.body)
-//     res.redirect("/todos")
-// }
-
+  
