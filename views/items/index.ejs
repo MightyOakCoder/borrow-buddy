@@ -1,29 +1,32 @@
 <%- include('../partials/header') %>
 
-<h1>AVAILABLE ITEMS</h1>
-<div class="tbl-header">
-  <table id="list" cellpadding="0" cellspacing="0" border="0">
-    <thead>
-      <tr>
-        <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->
-        <th onclick="sortTable(0)">Category</th>
-        <th onclick="sortTable(1)">Item</th>
-        <th onclick="sortTable(2)">Brand</th>
-        <th onclick="sortTable(3)">Owner</th>
-      </tr>
-    </thead>
-  </table>
-</div>
-  <tbody>
-  <% items.forEach(function(i) { %>
-  <tr>
-    <td><%= i.category %></td>
-    <td><a href="/items/<%= i._id %>"><%= i.item %></a></td>
-    <td><%= i.brand %></td>
-    <td><%= i.owner %></td>
-  </tr>
-  <% }); %>
-</tbody>
-</table>
-
-  <%- include('../partials/footer') %>
+<section>
+  <!--for demo wrap-->
+  <h1>AVAILABLE ITEMS</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>CATEGORY</th>
+          <th>ITEM</th>
+          <th>BRAND</th>
+          <th>OWNER</th>
+         </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+        <% items.forEach(function(i) { %>
+        <tr>
+          <td><%= i.category %></td>
+          <td><a href="/items/<%= i._id %>"><%= i.item %></a></td>
+          <td><%= i.brand %></td>
+          <td><%= i.owner %></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+</section>
