@@ -15,4 +15,9 @@ router.get("/:id", itemsCtrl.show);
 // POST /items - add new item
 router.post("/", isLoggedIn, itemsCtrl.create)
 
+
+router.get("/items/:id/edit", isLoggedIn, itemsCtrl.edit)
+// router.delete("/items/:id", isLoggedIn, itemsCtrl.delete);
+router.put("/items/:id", isLoggedIn, itemsCtrl.update);
+
 module.exports = router;
