@@ -3,11 +3,10 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const borrowSchema = new Schema({
-    item: String,
-    brand: String,
-    category: String,
-    owner: String,
-    dueDate: Date
+    _id:  {type: Schema.Types.ObjectId, ref: 'Item'},
+    name: String,
+    description: String,
+    borrowedBy:  {type: Schema.Types.ObjectId, ref: 'User'},
 });
 
 // Compile the schema into a model and export it
