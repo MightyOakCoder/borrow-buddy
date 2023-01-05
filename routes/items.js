@@ -4,6 +4,8 @@ const itemsCtrl = require("../controllers/items")
 const isLoggedIn = require("../config/auth.js")
 
 //GET /items - show all items
+router.get("/", itemsCtrl.allItems);
+
 router.get("/", itemsCtrl.index);
 
 // GET /items/new - new item form

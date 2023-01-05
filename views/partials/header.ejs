@@ -7,36 +7,39 @@
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script defer src="javascripts/scripts.js"></script> 
-  <title><%= title %></title>
+  <title>Borrow Buddy</title>
 </head>
 <body>
 
-  <!-- Top Navigation Menu -->
-  <div class="topnav">
-    <img src="/images/borrow-buddy-logo.png" width="auto" height="50px" class="active">
-    <div id="myLinks">
-      <% if (user) { %>
-        <a href="/items" <%- title === 'Available Items' ? 'class="active"' : '' %>>AVAILABLE ITEMS</a>
-        <a href="/items" <%- title === 'My Borrowed Items' ? 'class="active"' : '' %>>MY BORROWED ITEMS</a>
-        <a href="/items/new" <%- title === 'Add Item' ? 'class="active"' : '' %>>ADD ITEM</a>
-          <a href="/logout">LOGOUT</a>
-          <% } else { %>
-              <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"</a>
-              <a href="/items" <%- title === 'Available Items' ? 'class="active"' : '' %>>AVAILABLE ITEMS</a>
-          <% } %>
+  <div id="menuDemo">
+    <!--start CssMenu-->
+    <div class="menu-icon-wrapper">
+      <div class="menu-icon" onclick="toggleCssMenu(this)">
+        <div class="three-line">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </div>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
-  
-  <!-- <nav>
-    <img src="/images/borrow-buddy-logo.png" width="500px" height="auto">
-    <a href="/items" <%- title === 'Item Inventory' ? 'class="active"' : '' %>>ITEM INVENTORY</a>
-    <% if (user) { %>
-      <a href="/items/new" <%- title === 'Add Item' ? 'class="active"' : '' %>>ADD ITEM</a>
-      <a href="/logout">LOG OUT</a>
-    <% } else { %>
-      <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
-    <% } %>
-  </nav> -->
+    <div id="cssmenu">
+        <ul>
+            <li><a href="#">Available Items</a></li>
+            <li><a href="#">Creative</a></li>
+            <li><a href="#">Studio</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Contact</a></li>
+    
+            <% if (user) { %>
+                <li><a href="/items" class="active">AVAILABLE ITEMS</a></li>
+                <li><a href="/items" class="active">MY BORROWED ITEMS</a></li>
+                <li><a href="/items/new" class="active">ADD ITEM</a></li>
+                <li><a href="/logout">LOGOUT</a></li>
+            <% } else { %>
+                <li><a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"</a></li>
+                <li><a href="/items" class="active">AVAILABLE ITEMS</a></li>
+            <% } %>
+        </ul>
+    </div>
+    
+ 
