@@ -1,4 +1,5 @@
 # Borrow Buddy 
+##### (Original Wireframe)
 [![Wireframe-Screenshot.png](https://i.postimg.cc/HnV2FLc7/Wireframe-Screenshot.png)](https://postimg.cc/CnpkqS4F)
 
 My second GA SEI project is called Borrow Buddy. 
@@ -32,13 +33,24 @@ https://trello.com/b/AacgXy0O/project-2-borrow-buddy
 
 
 ## Screenshots:
-![HCyKTPa.png](https://iili.io/HCyKTPa.png) ![HCyqHrb.png](https://iili.io/HCyqHrb.png)
+![Pre-Login-Screenshot.png](https://i.postimg.cc/pXrDgkfM/Pre-Login-Screenshot.png)
+
+![Logged-in-Screenshot.png](https://i.postimg.cc/59nB7DFm/Logged-in-Screenshot.png)
+
+![add-new-item-Screenshot.png](https://i.postimg.cc/zvtTyR1Q/add-new-item-Screenshot.png)
+
+![Item-Details-Screenshot.png](https://i.postimg.cc/Fs6jmcpd/Item-Details-Screenshot.png)
+
 
 ## MVP Goals:
-- 
+- Create OAuth/Log into Google
+- AAU, I want to be able to add a new item
+- AAU, I want to be able to see the full list of items that are available to be borrowed
+- AAU, I want to be able to add, edit/update, and delete comments
 
 ## Unsolved Problems: 
 - Currently my navigation menu isn't working, I had wanted a more stylized menu
+-I was able to sort my available items table by header, but it stopped working
 
 ## Icebox (Planned Future Enhancements):
 - AAU, I want to select an item to borrow, remove it from the available items list, and add it to a borrowed list, attached to my username
