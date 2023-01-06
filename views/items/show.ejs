@@ -7,11 +7,11 @@
         <div class="result">
             <%= item.item %>
         </div>
-        <div class="bold-header">Brand: </div>
+        <br><div class="bold-header">Brand: </div>
         <div class="result">
             <%= item.brand %>
         </div>
-        <div class="bold-header">Owner: </div>
+        <br><div class="bold-header">Owner: </div>
         <div class="result">
             <%= item.owner %>
         </div>
@@ -65,10 +65,10 @@
                                 <td>
                                     <% if (user && user._id.equals(c.user)) { %>
                                         <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
-                                            <button type="submit">X</button>
+                                            <button type="submit" class="delete">DELETE</button>
                                         </form>
                                         <form action="/comments/<%= c._id %>?_method=PUT" method="POST">
-                                            <input type="text" name="content" value="<%= c.text %>">
+                                            <input type="text" name="content" class="update-comment" value="<%= c.text %>">
                                             <button type="submit">UPDATE COMMENT</button>
                                         </form>
                                         <% } %>
