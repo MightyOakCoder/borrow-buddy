@@ -1,23 +1,24 @@
 <%- include('../partials/header') %>
 
+<h3>item details</h3>
     <section id="show-page">
 
-        <div>Item: </div>
-        <div>
+        <div class="bold-header">Item: </div>
+        <div class="result">
             <%= item.item %>
         </div>
-        <div>Brand: </div>
-        <div>
+        <div class="bold-header">Brand: </div>
+        <div class="result">
             <%= item.brand %>
         </div>
-        <div>Owner: </div>
-        <div>
+        <div class="bold-header">Owner: </div>
+        <div class="result">
             <%= item.owner %>
         </div>
     </section>
 
     <br><br>
-    <h2>Comments</h2>
+    <h3>Comments</h3>
     <% if (user) { %>
         <form id="add-comment-form" method="POST" action="/items/<%= item._id %>/comments">
             <label></label>
