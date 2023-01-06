@@ -45,7 +45,7 @@ https://trello.com/b/AacgXy0O/project-2-borrow-buddy
 ## MVP Goals:
 - Create OAuth/Log into Google
 - AAU, I want to be able to add a new item
-- AAU, I want to be able to see the full list of items that are available to be borrowed
+- AAU, I want to be able to see the full list of items that are available to be borrowed, and be able to move them from the available items list to a user's borrowed items list
 - AAU, I want to be able to add, edit/update, and delete comments
 
 ## Unsolved Problems: 
