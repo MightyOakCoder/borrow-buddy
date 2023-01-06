@@ -1,5 +1,6 @@
 <%- include('../partials/header') %>
 
+<h1>ADD NEW ITEM</h1>
 <div class="div3">
 <form id="new-form" action="/items" method="POST">
   <div><label>Item:</label>
@@ -36,12 +37,12 @@
   </select>
   </div>
 <div>
-  <label for="img">Choose Item Image:</label>
-  <br><input type="file" id="img" name="img" accept="image/png, image/jpeg">
+  <br><label for="img">Choose Item Image:</label>
+  <input type="file" id="img" name="img" accept="image/png, image/jpeg">
 </div>
   
 
-<br> <input type="submit" value="Add Item">
+<br> <input type="submit" value="Add Item" id="input-submit">
 </form>
 </div>
 <%- include('../partials/footer') %>

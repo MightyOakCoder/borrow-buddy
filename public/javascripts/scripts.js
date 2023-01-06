@@ -1,58 +1,39 @@
-// Sort Table
-function sortTable(n) {
-  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+function sortTable(col) {
+  var table, rows, switching, i, x, y, shouldSwitch;
   table = document.getElementById("list");
   switching = true;
-  //Set the sorting direction to ascending:
-  dir = "asc"; 
-  /*Make a loop that will continue until
-  no switching has been done:*/
+  /* Make a loop that will continue until
+  no switching has been done: */
   while (switching) {
-    //start by saying: no switching is done:
+    // Start by saying: no switching is done:
     switching = false;
     rows = table.rows;
-    /*Loop through all table rows (except the
-    first, which contains table headers):*/
+    /* Loop through all table rows (except the
+    first, which contains table headers): */
     for (i = 1; i < (rows.length - 1); i++) {
-      //start by saying there should be no switching:
+      // Start by saying there should be no switching:
       shouldSwitch = false;
-      /*Get the two elements you want to compare,
-      one from current row and one from the next:*/
-      x = rows[i].getElementsByTagName("TD")[n];
-      y = rows[i + 1].getElementsByTagName("TD")[n];
-      /*check if the two rows should switch place,
-      based on the direction, asc or desc:*/
-      if (dir == "asc") {
-        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-          //if so, mark as a switch and break the loop:
-          shouldSwitch= true;
-          break;
-        }
-      } else if (dir == "desc") {
-        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-          //if so, mark as a switch and break the loop:
-          shouldSwitch = true;
-          break;
-        }
+      /* Get the two elements you want to compare,
+      one from current row and one from the next: */
+      x = rows[i].getElementsByTagName("TD")[col];
+      y = rows[i + 1].getElementsByTagName("TD")[col];
+      // Check if the two rows should switch place:
+      if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+        // If so, mark as a switch and break the loop:
+        shouldSwitch = true;
+        break;
       }
     }
     if (shouldSwitch) {
-      /*If a switch has been marked, make the switch
-      and mark that a switch has been done:*/
+      /* If a switch has been marked, make the switch
+      and mark that a switch has been done: */
       rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
       switching = true;
-      //Each time a switch is done, increase this count by 1:
-      switchcount ++;      
-    } else {
-      /*If no switching has been done AND the direction is "asc",
-      set the direction to "desc" and run the while loop again.*/
-      if (switchcount == 0 && dir == "asc") {
-        dir = "desc";
-        switching = true;
-      }
     }
   }
 }
+
+
 
 // '.tbl-content' consumed little space for vertical scrollbar, scrollbar width depend on browser/os/platfrom. Here calculate the scollbar width .
 $(window).on("load resize ", function() {
@@ -60,26 +41,3 @@ $(window).on("load resize ", function() {
     $('.tbl-header').css({'padding-right':scrollWidth});
   }).resize();
 
-  //nav
-  function myFunction() {
-    var x = document.getElementById("myLinks");
-    if (x.style.display === "block") {
-      x.style.display = "none";
-    } else {
-      x.style.display = "block";
-    }
-  }
-
-  function toggleCssMenu(icon) {
-    var cssmenu = document.getElementById('cssmenu');
-    if (icon.className.indexOf('active') == -1) {
-        icon.className = 'menu-icon active';
-  cssmenu.style.display = "block";
-  setTimeout(function(){cssmenu.className = 'active';},0);            
-    }
-    else {
-        icon.className = 'menu-icon';
-  cssmenu.className = '';
-  setTimeout(function(){cssmenu.style.display = "none";},411); 
-    }
-}

@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<h3>item details</h3>
+<h1>ITEM DETAILS</h1>
     <section id="show-page">
 
         <div class="bold-header">Item: </div>
@@ -18,12 +18,12 @@
     </section>
 
     <br><br>
-    <h3>Comments</h3>
+    <h1>Comments</h1>
     <% if (user) { %>
         <form id="add-comment-form" method="POST" action="/items/<%= item._id %>/comments">
             <label></label>
-            <textarea name="content"></textarea>
-            <label>Condition:</label>
+            <textarea class="content" name="content"></textarea>
+            <br><label>Condition:</label>
             <select name="condition">
                 <option value="Like New">Like New</option>
                 <option value="Excellent">Excellent</option>
@@ -37,6 +37,7 @@
 
             <% if (item.comments.length) { %>
                 <table>
+                    <div class="tbl-header">
                     <thead>
                         <tr>
                             <th>User</th>
@@ -45,7 +46,8 @@
                             <th>Condition</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    </div>
+                        <tbody>
                         <% item.comments.forEach(function(c) { %>
                             <tr>
                                 <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>">
