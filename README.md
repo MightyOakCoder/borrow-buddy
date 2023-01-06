@@ -1,25 +1,29 @@
 # Borrow Buddy 
 [![Wireframe-Screenshot.png](https://i.postimg.cc/HnV2FLc7/Wireframe-Screenshot.png)](https://postimg.cc/CnpkqS4F)
 
-In this first project for the GA SEI course, I've chosen Memory, aka Concentration. This is a card game in which all of the cards are laid face down and two cards are flipped face up over each turn. The object of the game is to turn over pairs of matching cards.
+My second GA SEI project is called Borrow Buddy. 
 
-My second GA SEI project is called Borrow Buddy. I wanted to create an application that will allow friends to borrow household items from one another. How many times have we all had a use for a certain item, but only need it for a one-off project, or a small amount of time? What if you could just borrow that item from a friend? If you didn't have the space or the need for a miter saw year round, but a friend already owned one, you could just request to borrow it!
+I wanted to create an application that will allow friends to borrow household items from one another. 
+
+How many times have we all had a use for a certain item, but only need it for a one-off project, or a small amount of time? 
+
+What if you could just borrow that item from a friend? 
+If you didn't have the space or the need for a miter saw year round, but a friend already owned one, you could just request to borrow it!
 
 ## List of Technologies Used:
 - HTML
 - CSS
 - JavaScript
 - Node
+- Express
 - MongoDB (Atlas)
 - Mongoose
+- Figma
 - Canva
-
-## Wireframe
-https://www.figma.com/community/file/1182075554291730122
+- Heroku
 
 ## Getting Started
-Access at: https://beckyweeks14.github.io/Memory/
-- Note: If you do not have a match, wait for the board to reset before trying another set of cards
+Access at: https://borrow-buddy-1523.herokuapp.com/
 
 
 ## Trello
@@ -27,25 +31,17 @@ https://trello.com/b/AacgXy0O/project-2-borrow-buddy
 
 
 
-## Win/Loss Screenshots:
+## Screenshots:
 ![HCyKTPa.png](https://iili.io/HCyKTPa.png) ![HCyqHrb.png](https://iili.io/HCyqHrb.png)
+
 ## MVP Goals:
-- There are 12 cards displayed face down
-- There are 6 different pairs of matching cards
-- When a card selected it will “flip over” to the face of the card
-- 2 cards can be selected at a time
-- Determine if the 2 selected cards are a match
-- Guess counter resets after 2 selections, unless cards match
-- Turn counts (2 clicks) are kept track
-- Matches are kept track 
-- If 6 matches are made in less than 10 clicks, you have a win,
-  otherwise it is a loss
-- A New Game button is displayed to start a new game
+- 
 
 ## Unsolved Problems: 
-- Currently if I click outside of the game board, it also registers clicks
-- Randomize the face of the cards on refresh 
+- Currently my navigation menu isn't working, I had wanted a more stylized menu
 
 ## Icebox (Planned Future Enhancements):
-- Adding @media CSS so it looks clean on both mobile and desktop
-- Disabling clicks after 10 clicks
+- AAU, I want to select an item to borrow, remove it from the available items list, and add it to a borrowed list, attached to my username
+- AAU, I want to be able to search the inventory list for a particular item
+- AAU, I want to be able to delete items from my library of items that I'm willing to loan out
+- AAU, i want to be able to update an item in order to express the item's condition
