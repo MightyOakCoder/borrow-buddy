@@ -2,7 +2,7 @@
 
 <h1>ITEM DETAILS</h1>
     <section id="show-page">
-
+        <div class="card">
         <div class="bold-header">Item: </div>
         <div class="result">
             <%= item.item %>
@@ -14,6 +14,7 @@
         <br><div class="bold-header">Owner: </div>
         <div class="result">
             <%= item.owner %>
+        </div>
         </div>
     </section>
 
@@ -31,52 +32,63 @@
                 <option value="Fair">Fair</option>
                 <option value="Poor">Poor</option>
             </select>
-            <input type="submit" value="Add Comment">
+            <br>
+            <br><button class="btn" type="submit" name="action">
+                Add Comment
+            </button>
         </form>
+        <hr>
         <% } %>
-
+        <section>
             <% if (item.comments.length) { %>
-                <table>
-                    <div class="tbl-header">
-                    <thead>
-                        <tr>
-                            <th>User</th>
-                            <th>Date</th>
-                            <th>Comments</th>
-                            <th>Condition</th>
-                        </tr>
-                    </thead>
-                    </div>
-                        <tbody>
-                        <% item.comments.forEach(function(c) { %>
+                <div class="tbl-header">
+                    <table id="list" cellpadding="0" cellspacing="0" border="0">
+                        <thead>
                             <tr>
-                                <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>">
-                                    <%= c.userName %>
-                                </td>
-                                <td>
-                                    <%= c.createdAt.toLocaleDateString() %>
-                                </td>
-                                <td>
-                                    <%= c.content %>
-                                </td>
-                                <td>
-                                    <%= c.condition %>
-                                </td>
-                                <td>
-                                    <% if (user && user._id.equals(c.user)) { %>
-                                        <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
-                                            <button type="submit" class="delete">DELETE</button>
-                                        </form>
-                                        <form action="/comments/<%= c._id %>?_method=PUT" method="POST">
-                                            <input type="text" name="content" class="update-comment" value="<%= c.text %>">
-                                            <button type="submit">UPDATE COMMENT</button>
-                                        </form>
-                                        <% } %>
-                                </td>
+                                <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->
+                                <th>User</th>
+                                <th>Date</th>
+                                <th>Comments</th>
+                                <th>Condition</th>
+                                <th></th>
                             </tr>
-                            <% }); %>
-                    </tbody>
-                </table>
+                        </thead>
+                    </table>
+                </div>
+                <div class="tbl-content">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <tbody>
+                            <% item.comments.forEach(function(c) { %>
+                                <tr>
+                                    <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>">
+                                        <%= c.userName %>
+                                    </td>
+                                    <td>
+                                        <%= c.createdAt.toLocaleDateString() %>
+                                    </td>
+                                    <td>
+                                        <%= c.content %>
+                                    </td>
+                                    <td>
+                                        <%= c.condition %>
+                                    </td>
+                                    <td>
+                                        <% if (user && user._id.equals(c.user)) { %>
+                                            <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+                                                <button class="btn delete" type="submit" name="action">DELETE</button>
+                                            </form>
+                                            <form action="/comments/<%= c._id %>?_method=PUT" method="POST">
+                                                <input type="text" name="content" class="update-comment" value="<%= c.text %>">
+                                                <button class="btn update" type="submit" name="action">UPDATE</button>
+                                            </form>
+                                            <% } %>
+                                    </td>
+                                </tr>
+                                <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
                 <% } else { %>
                     <h5>No Comments Yet</h5>
                     <% } %>

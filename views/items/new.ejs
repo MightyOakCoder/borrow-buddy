@@ -4,14 +4,14 @@
 <div class="div3">
 <form id="new-form" action="/items" method="POST">
   <div><label>Item:</label>
-    <br><input type="text" name="item">
+    <input type="text" name="item">
   </div>
   <div>
-    <label>Brand: </label>
-    <br><input type="text" name="brand">
+    <br><label>Brand: </label>
+    <input type="text" name="brand">
   </div>
   <div>
-  <label>Category:</label>
+  <br><label>Category:</label>
   <br><select name="category">
       <option value="Tools">Tools</option>
       <option value="Kitchen">Kitchen</option>
@@ -25,24 +25,27 @@
     </select>
   </div>
   <div>
-  <label>Owner:</label>
-  <br><input type="text" name="owner">
+    <br><label>Owner:</label>
+  <input type="text" name="owner">
   </div>
   <div>
-  <label>Borrow:</label>
+    <br><label>Borrow:</label>
   <br><select name="borrow">
     <option value="7Days">7 Days</option>
     <option value="14Days">14 Days</option>
     <option value="21Days">21 Days</option>
   </select>
   </div>
-<div>
+<!-- <div>
   <br><label for="img">Choose Item Image:</label>
   <input type="file" id="img" name="img" accept="image/png, image/jpeg">
-</div>
+</div> -->
   
 
-<br> <input type="submit" value="Add Item" id="input-submit">
+<br>   
+<button class="btn" type="submit" name="action">
+    Submit
+</button>
 </form>
 </div>
 <%- include('../partials/footer') %>

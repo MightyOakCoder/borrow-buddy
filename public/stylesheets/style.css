@@ -15,7 +15,7 @@ body {
 }
 body {
   background-image: url("https://iili.io/H1k1ECJ.png");
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-attachment: fixed;
   font-family: 'Roboto', sans-serif;
 }
@@ -35,7 +35,7 @@ body {
 body>nav {
   grid-area: nav;
   background-image: url("https://iili.io/H1k1ECJ.png");
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-attachment: fixed;
   font-family: 'Roboto', sans-serif;
   display: flex;
@@ -115,15 +115,29 @@ table {
 
 th {
   padding: 20px 15px;
-  text-align: left;
   font-weight: 500;
   font-size: 16px;
   color: #fff;
   text-transform: uppercase;
   text-align: center;
+  border-radius: 10px;
 }
 
-a, td {
+.card{
+  padding: 20px;
+  width: 190px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 20px 205px -25px 443px;
+}
+
+a, td, comment-user {
   padding: 10px;
   text-align: left;
   vertical-align: middle;
@@ -138,9 +152,6 @@ a, td {
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
 
-section {
-  margin: 25px;
-}
 
 .delete {
   color: rgb(186, 35, 35);
@@ -191,11 +202,11 @@ section {
   height: 30px;
 }
 
-.comment-user {
+/* .comment-user {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .comment-user img {
   border-radius: 50%;
@@ -237,25 +248,38 @@ input, textarea {
   margin-top: 1em;
   @include box-shadow(0 1px 1px rgba(black, 0.1));
   resize: none;
+  font-size: 14px;
+  border-radius: 10px;
+
  
 
  &:focus {
     @include box-shadow(0 0px 2px #2567c4 !important);
  }
 }
-#input-submit {
-  color: rgb(0, 0, 0); 
-  border: 2px solid #2567c4;
+.btn {
+  color: white;
+  background-color: #17519E;
+  font-size: 16px;
+  font-weight: 300;
+  border: 1px solid white;
   cursor: pointer;
-  border-radius: 25px;
-  width: 200px;
-  height: 10px;
+  border-radius: 10px;
+  width: 120px;
+  height: 36px;
+}
 
+select, input, update-comment {
+  font-size: 16px;
+  border-radius: 10px;
+  width: 120px;
+  height: 36px;
+}
 
  &:hover {
     @include box-shadow(0 1px 1px 1px rgba(#aaa, 0.6)); 
  }
-}
+
 
 @media  all and (max width: 500px) {
   body {
